@@ -33,6 +33,7 @@ SELECT * FROM ARTICLE
 WHERE ID_FOURNISSEUR NOT IN (
     SELECT ID FROM FOURNISSEUR WHERE NOM IN ('Française d’Imports', 'Dubois et Fils')
 );
+#directement mettre les id donc WHERE ID_FOURNISSEUR NOT IN (1, 3)
 
 #i. Lister tous les bons de commande dont la date de commande est entre le 01/02/2019 et le 30/04/2019 => absence de donnée pour ces dates
 #nouvelles donnéés créé :
