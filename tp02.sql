@@ -6,13 +6,13 @@ USE compta;
 #02-Création des 4 tables
 #FOURNISSEUR
 CREATE TABLE FOURNISSEUR (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT PRIMARY KEY,
     NOM VARCHAR(255)
 );
 
 #ARTICLE
 CREATE TABLE ARTICLE (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT PRIMARY KEY,
     REF VARCHAR(255),
     DESIGNATION VARCHAR(255),
     PRIX DECIMAL(10, 2),
@@ -21,7 +21,7 @@ CREATE TABLE ARTICLE (
 
 #BON DE COMMANDE
 CREATE TABLE BON (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT PRIMARY KEY,
     NUMERO VARCHAR(255),
     DATE_CMDE DATE,
     DELAI INT,
@@ -80,7 +80,7 @@ INSERT INTO BON (ID, NUMERO, DATE_CMDE, DELAI, ID_FOURNISSEUR) VALUES
 (1, '001', CURDATE(), 3, 1);
 
 #Insertion des articles dans la composition du bon de commande
-INSERT INTO COMPO (ID, QTE, ID_ARTICLE, ID_BON) VALUES
-(1, 3, 1, 1),  # 3 perceuses P1
-(2, 4, 5, 1),  # 4 meuleuses 125mm
-(3, 1, 7, 1);  # 1 perceuse à colonne
+INSERT INTO COMPO (QTE, ID_ARTICLE, ID_BON) VALUES
+(3, 1, 1),  -- 3 perceuses P1
+(4, 5, 1), -- 4 meuleuses 125mm
+(1, 7, 1);  -- 1 perceuse à colonne
